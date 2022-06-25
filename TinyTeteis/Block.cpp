@@ -235,7 +235,7 @@ void Block::reset(const bool& isRandType, const int& x, const int& y) {
 		break;
 
 	case 2:
-		color = BLACK;
+		color = PINK;
 		break;
 
 	case 3:

@@ -1,7 +1,9 @@
 #include "interface.h"
+#include "record.h"
 
 bool map[MAP_WIDTH][MAP_HEIGHT] = { 0 };
-unsigned int score = 0;
+int score = 0;
+int bestScore = 0;
 unsigned gameTime = 0;
 
 void drawMap() {
@@ -36,8 +38,9 @@ void drawPrompt() {
 	wchar_t str[20];
 	wsprintf(str, L"Score : %u", score);
 	outtextxy(230, 160, str);
-	//wsprintf(str, L"time : %u ", gameTime / 1000);//秒后面变分钟
-	//outtextxy(230, 185, str);
+	bestScore = getHighestRecode();
+	wsprintf(str, L"Best : %u ", bestScore);//秒后面变分钟
+	outtextxy(230, 185, str);
 }
 
 bool checkLine(const unsigned char& line) {
@@ -60,4 +63,5 @@ void clearLine() {
 		score += 10;
 	}	
 	drawPrompt();
+	storeScore(score);
 }	

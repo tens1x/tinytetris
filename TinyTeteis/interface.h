@@ -5,7 +5,7 @@
 #define MAP_HEIGHT 20	
 
 extern bool map[MAP_WIDTH][MAP_HEIGHT];
-extern unsigned score;
+extern int score;
 extern unsigned gameTime;
 
 void drawMap();

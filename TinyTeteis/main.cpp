@@ -1,4 +1,5 @@
 #include "Block.h"
+#include "record.h"
 #include <ctime>
 #include <iostream>
 using namespace std;
